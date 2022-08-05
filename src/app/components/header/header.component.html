@@ -1,0 +1,44 @@
+<div class="header-container">
+    <mat-toolbar color="primary" fxLayout="row" fxLayoutGap="2rem" fxLayoutAlign="space-between center">
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <img src="" alt="">
+            <span>Ranjan</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2rem" *ngIf="!deviceXs">
+            <button mat-button *ngIf="enableAbout" routerLink="/about">
+                <span>About</span>
+            </button>
+            <button mat-button *ngIf="enableContactUs">
+                <span>Contact Us</span>
+            </button>
+            <button mat-button *ngIf="enableCommunity">
+                <span>Community</span>
+            </button>
+            <button mat-button *ngIf="enableBlog">
+                <span>Blog</span>
+            </button>
+        </div>
+        <div *ngIf="deviceXs">
+            <button *ngIf="deviceXs" mat-button (click)="menuLayout()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    <mat-drawer #drawer *ngIf="expandMenu">
+        <div fxLayout="column" fxLayoutAlign="space-around center" (click)="menuItemClicked($event)">
+            <button mat-button *ngIf="enableAbout" routerLink="/about">
+                <span>About</span>
+            </button>
+            <button mat-button *ngIf="enableContactUs">
+                <span>Contact Us</span>
+            </button>
+            <button mat-button *ngIf="enableCommunity">
+                <span>Community</span>
+            </button>
+            <button mat-button *ngIf="enableBlog">
+                <span>Blog</span>
+            </button>
+        </div>
+    </mat-drawer>
+
+</div>

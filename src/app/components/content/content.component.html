@@ -1,0 +1,10 @@
+<div class="content-container">
+    <div fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="space-around" *ngFor="let item of items">
+        <img src="item.img" alt="no-image">
+        <section>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.content }}</p>
+        </section>
+        <advertisement></advertisement>
+    </div>
+</div>
